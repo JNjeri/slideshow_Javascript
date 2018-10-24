@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>slideshow</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/normalize">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            background-color: white;
+        }
+
+        .image {
+            margin: 20 auto;
+            opacity: 1;
+            display: block;
+            width: 100%;
+            height: auto;
+            transition: .5s ease;
+            backface-visibility: hidden;
+        }
+
+        .middle {
+            transition: .5s ease;
+            opacity: 0;
+            position: absolute;
+            top: 70%;
+            left: 30%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .hover_container:hover .image {
+            opacity: 0.3;
+        }
+
+        .hover_container:hover .middle {
+            opacity: 1;
+        }
+
+        .text {
+            background-color: rgb(209, 221, 209);
+            color: rgb(22, 8, 150);
+            font-size: 16px;
+            padding: 16px 32px;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="dist/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="dist/assets/owl.carousel.min.css">
+</head>
+
+<body>
+    <div class="cont">
+        <div class="slideshow">
+            <div class="slider-reel owl-carousel owl-theme">
+
+                <div class="k"> Helo World
+                    <img src="img/1.jpg" data-merge="4" alt="">
+                </div>
+
+                <img src="img/4.jpg" alt="">
+                <img src="img/7.jpg" data-merge="1" alt="">
+                <img src="img/8.jpg" alt="">
+
+            </div>
+            <div class="hover_container">
+                <img src="img/5.jpg" alt="Avatar" class="img">
+                <div class="middle">
+                    <div class="text"> shooting stars are cute,, mother nature</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        $('.owl-carousel').owlCarousel({
+            items: 8,
+            loop: true,
+            margin: 10,
+            merge: true,
+            responsive: {
+                678: {
+                    mergeFit: true
+                },
+                1000: {
+                    mergeFit: false
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
